@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Iliad - Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 40px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 36px;
+            color: #333;
+            display: inline-block;
+            margin-right: 20px;
+        }
+        p {
+            font-size: 24px;
+            line-height: 1.6;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #searchForm {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        #searchForm label {
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 10px;
+            color: #555;
+            font-size: 20px;
+        }
+        #searchTermInput {
+            padding: 10px;
+            font-size: 20px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            margin-right: 10px;
+            color: #555;
+        }
+        #searchForm input[type="number"] {
+            padding: 10px;
+            font-size: 20px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            margin-right: 10px;
+            width: 80px;
+            color: #555;
+        }
+        #searchForm button {
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #searchForm button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Welcome to The <i>Iliad</i></h1>
+
+        <form id="searchForm">
+            <label for="book">Book:</label>
+            <input type="number" id="book" name="book" placeholder = "1 - 24" required min = 1 max = 24>
+            <label for="line">Line:</label>
+            <input type="number" id="line" name="line" placeholder = "1" required min = 1>
+            <button type="submit">Go</button>
+        </form>
+
+        <p>Use the boxes above to go to a specific book and line number. Click the button below to start reading.</p>
+        <div style="text-align: left;">
+            <button onclick="window.location.href='/startReading'">Start Reading</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+
+            event.preventDefault();
+
+            const book = document.getElementById('book').value; // Book number
+            const line = document.getElementById('line').value // Line number
+
+
+            
+            
+            // Divide by 25 to get a Float of page number
+            // Use the Math.ceil() function to round the float to the next largest or equal
+            // Integer, this ensures that all lines on a page can be fond in the search
+            val = 0
+            if (line % 25 == 0){val = 1}
+
+            page = Math.ceil(line / 25) + val; 
+
+            if (page * 25 > line) {page = Math.ceil(line / 25)}
+            
+            url = `/${book}/${page}`;
+
+
+            // Attempt to fetch the page to check if it exists
+            fetch(url)
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = url;
+                    } else {
+                        throw new Error('Page not found');
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('error-message').innerText = 'Line or book number invalid. Redirecting to home page.';
+                    setTimeout(() => {
+                        window.location.href = `/`;
+                    }, 3000);
+                });
+        });
+    </script>
+</body>
+</html>
