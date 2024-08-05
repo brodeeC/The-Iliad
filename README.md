@@ -28,7 +28,8 @@ The Editions of the Homeric poetry and commentary are derived from originals (c)
 1. Open cmd line and ensure you can start Julia from it. If not, see tutorial above
 2. Exit out of julia if you started it, but don't close the command line.
 3. cd into your github folder
-4. cd into the folder The-Iliad - this folder should contain the contents of this repository
+4. cd into the folder The-Iliad
+- this folder should contain the contents of this repository
 5. Next, enter the command: julia -e 'using Pkg; Pkg.activate("."); Pkg.add("Genie")'
 6. If Julia isn't running in the command line, enter the command `julia`
 7. Enter the command: include("start_server.jl")
