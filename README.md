@@ -11,7 +11,11 @@ The Editions of the Homeric poetry and commentary are derived from originals (c)
 
 ## This repository contains pages separating the Iliad by 25 lines. All pages are HTML files. Contains a Julia backend that utilizes the Genie package to create a local web page on your machine that will display the Iliad as well as scholia for a given line.
 
+
 ### Julia tutorial
+On Mac: Enter the command `curl -fsSL https://install.julialang.org | sh` in the command line
+On Windows: Enter the command `winget install julia -s msstore` in the command line
+This should install Julia and the Julia App onto your computer. You should now be able to open Julia by typing `julia` in the command line, or by clicking the Julia App icon.
 
 ### Tutorial on running Julia from command line
 1. Open command line (terminal)
@@ -37,7 +41,11 @@ The Editions of the Homeric poetry and commentary are derived from originals (c)
 9. Finally, go to your web browser of choice and enter 127.0.0.1:8000 into the search bar!
 
 
-
-### Pluto notebook that generates pages
-#### To run Pluto in julia
+### Install and run Pluto notebooks
+1. In a Julia terminal, enter the command `import Pkg; Pkg.add("Pluto")`
+        Note: This will only work if you're in a Julia terminal, the line should look like `julia> import Pkg; Pkg.add("Pluto")`
+2. Now Pluto should be installed on your machine, still in the Julia terminal, enter the command: `using Pluto; Pluto.run()`
+3. Now, Pluto should be open in your browser
+4. In order to open the file "IliadScholiaPageGenerator.jl" in Pluto you'll need to enter the path to the file in the "Open Notebook" box in Pluto Notebooks
+5. Now you have the ability to generate the same Iliad pages found in this repository!
 
