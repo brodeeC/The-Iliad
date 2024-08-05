@@ -13,8 +13,8 @@ The Editions of the Homeric poetry and commentary are derived from originals (c)
 
 
 ### Julia tutorial
-On Mac: Enter the command `curl -fsSL https://install.julialang.org | sh` in the command line
-On Windows: Enter the command `winget install julia -s msstore` in the command line
+- On Mac: Enter the command `curl -fsSL https://install.julialang.org | sh` in the command line
+- On Windows: Enter the command `winget install julia -s msstore` in the command line
 This should install Julia and the Julia App onto your computer. You should now be able to open Julia by typing `julia` in the command line, or by clicking the Julia App icon.
 
 ### Tutorial on running Julia from command line
