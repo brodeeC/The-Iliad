@@ -44,7 +44,7 @@ The Editions of the Homeric poetry and commentary are derived from originals (c)
 
 ### Install and run Pluto notebooks
 1. In a Julia terminal, enter the command `import Pkg; Pkg.add("Pluto")`
-        Note: This will only work if you're in a Julia terminal, the line should look like `julia> import Pkg; Pkg.add("Pluto")`
+    - Note: This will only work if you're in a Julia terminal, the line should look like `julia> import Pkg; Pkg.add("Pluto")`
 2. Now Pluto should be installed on your machine, still in the Julia terminal, enter the command: `using Pluto; Pluto.run()`
 3. Now, Pluto should be open in your browser
 4. In order to open the file "IliadScholiaPageGenerator.jl" in Pluto you'll need to enter the path to the file in the "Open Notebook" box in Pluto Notebooks
