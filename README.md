@@ -1,4 +1,6 @@
 # The *Iliad*
+Repository made by: **Brodee Clontz**
+*Homeri **Ilias** cum Scholia Vetera.*
 
 Collaborators: Alyson Cramer, Furman University; Dr. Christopher Blackwell, Furman University; Dr. Mary Ebbott, The College of the Holy Cross; Dr. Brent Seales, the University of Kentucky’s Center for Visualization and Virtual Environments; Dr. Neel Smith, The College of the Holy Cross.
 
