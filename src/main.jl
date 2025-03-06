@@ -54,7 +54,7 @@ route("/The-Iliad/search", method = POST) do
 end
 
 # Route for serving Iliad book pages
-route("/The-Iliad/:book/:page", method = GET) do
+route("/The-Iliad/serve/:book/:page", method = GET) do
 
     # Correct path to the book's directory
     current_book_dir = joinpath(@__DIR__, "public", "Book$(payload(:book))")
