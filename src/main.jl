@@ -5,7 +5,7 @@ using Genie, Genie.Requests
 using HTTP
 
 # Route for serving static files like index.html
-route("/The-Iliad", method = GET) do
+route("/The-Iliad/", method = GET) do
     try
         html_content = read(joinpath("public", "index.html"), String)
         return HTTP.Response(200, [("Content-Type", "text/html")], html_content)
@@ -15,7 +15,7 @@ route("/The-Iliad", method = GET) do
 end
 
 # Route for redirecting to the first page of Book1
-route("/startReading") do
+route("/The-Iliad/startReading") do
     try
         path = read(joinpath(@__DIR__,"public/Book1/page1.html"), String)
         return HTTP.Response(200, [("Content-Type", "text/html")], path)
@@ -24,7 +24,7 @@ route("/startReading") do
     end
 end
 
-route("/search", method = POST) do 
+route("/The-Iliad/search", method = POST) do 
     try
         search_query = jsonpayload()["query"]
         
@@ -54,7 +54,7 @@ route("/search", method = POST) do
 end
 
 # Route for serving Iliad book pages
-route("/:book/:page", method = GET) do
+route("/The-Iliad/:book/:page", method = GET) do
 
     # Correct path to the book's directory
     current_book_dir = joinpath(@__DIR__, "public", "Book$(payload(:book))")
