@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.45
+# v0.19.47
 
 using Markdown
 using InteractiveUtils
@@ -280,35 +280,35 @@ function urlFormation(currBook ::Int64, currPage ::Int64, lastpage)
 
 			# First book, first page
 			if (currBook == 1 && currPage == 1)
-				prev_url = "/"
-				next_url = "/$currBook/$nextPage"
+				prev_url = "/The-Iliad/home"
+				next_url = "/The-Iliad/serve/$currBook/$nextPage"
 
 			# Last page, any book but book 24
 			elseif (currPage == lastpage && currBook != 24)
-				prev_url = "/$currBook/$prevPage"
-				next_url = "/$nextBook/1"
+				prev_url = "/The-Iliad/serve/$currBook/$prevPage"
+				next_url = "/The-Iliad/serve/$nextBook/1"
 
 			# Last page, only book 24
 			elseif (currPage == lastpage && currBook == 24)
-				prev_url = "/$currBook/$prevPage"
-				next_url = "/"
+				prev_url = "/The-Iliad/serve/$currBook/$prevPage"
+				next_url = "/The-Iliad/home"
 
 			# First page of any book but the first
 			elseif (currPage == 1)
-				prev_url = "/$prevBook/$lenPrevBook"
-				next_url = "/$currBook/$nextPage"
+				prev_url = "/The-Iliad/serve/$prevBook/$lenPrevBook"
+				next_url = "/The-Iliad/serve/$currBook/$nextPage"
 
 			# Any page that isn't the first or last
 			else 
-				prev_url = "/$currBook/$prevPage"
-				next_url = "/$currBook/$nextPage"
+				prev_url = "/The-Iliad/serve/$currBook/$prevPage"
+				next_url = "/The-Iliiad/serve/$currBook/$nextPage"
 			end
 			# Bottom of the page, creates buttons to navigate through pages
 			return """
 
 				<button onclick="window.location.href='$prev_url'">Previous Page</button>
 				<button onclick="window.location.href='$next_url'">Next Page</button>
-				<button onclick="window.location.href='/'">Home</button>
+				<button onclick="window.location.href='/The-Iliad/home'">Home</button>
 			    </div>
 			"""
 end
@@ -893,6 +893,12 @@ version = "0.4.13"
 deps = ["Printf"]
 uuid = "ade2ca70-3891-5945-98fb-dc099432e06a"
 
+[[deps.Dbus_jll]]
+deps = ["Artifacts", "Expat_jll", "JLLWrappers", "Libdl"]
+git-tree-sha1 = "fc173b380865f70627d7dd1190dc2fce6cc105af"
+uuid = "ee1fde0b-3d02-5ea6-8484-8dfef6360eab"
+version = "1.14.10+0"
+
 [[deps.DeepDiffs]]
 git-tree-sha1 = "9824894295b62a6a4ab6adf1c7bf337b3a9ca34c"
 uuid = "ab62b9b5-e342-54a8-a765-a90f495de1a6"
@@ -1063,7 +1069,7 @@ deps = ["Random"]
 uuid = "9fa8497b-333b-5362-9e8d-4d0656e87820"
 
 [[deps.GLFW_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl", "Libglvnd_jll", "Xorg_libXcursor_jll", "Xorg_libXi_jll", "Xorg_libXinerama_jll", "Xorg_libXrandr_jll", "xkbcommon_jll"]
+deps = ["Artifacts", "JLLWrappers", "Libdl", "Libglvnd_jll", "Xorg_libXcursor_jll", "Xorg_libXi_jll", "Xorg_libXinerama_jll", "Xorg_libXrandr_jll", "libdecor_jll", "xkbcommon_jll"]
 git-tree-sha1 = "3f74912a156096bd8fdbef211eff66ab446e7297"
 uuid = "0656b61e-2033-5cc2-a64a-77c0f6c09b89"
 version = "3.4.0+0"
@@ -1810,6 +1816,12 @@ deps = ["OffsetArrays"]
 git-tree-sha1 = "0fac6313486baae819364c52b4f483450a9d793f"
 uuid = "5432bcbf-9aad-5242-b902-cca2824c8663"
 version = "0.5.12"
+
+[[deps.Pango_jll]]
+deps = ["Artifacts", "Cairo_jll", "Fontconfig_jll", "FreeType2_jll", "FriBidi_jll", "Glib_jll", "HarfBuzz_jll", "JLLWrappers", "Libdl"]
+git-tree-sha1 = "9dd97171646850ee607593965ce1f55063d8d3f9"
+uuid = "36c8627f-9965-5494-a995-c6b170f724f3"
+version = "1.54.0+0"
 
 [[deps.Parameters]]
 deps = ["OrderedCollections", "UnPack"]
@@ -2644,6 +2656,12 @@ version = "0.15.1+0"
 deps = ["Artifacts", "Libdl"]
 uuid = "8e850b90-86db-534c-a0d3-1478176c7d93"
 version = "5.8.0+0"
+
+[[deps.libdecor_jll]]
+deps = ["Artifacts", "Dbus_jll", "JLLWrappers", "Libdl", "Libglvnd_jll", "Pango_jll", "Wayland_jll", "xkbcommon_jll"]
+git-tree-sha1 = "9bf7903af251d2050b467f76bdbe57ce541f7f4f"
+uuid = "1183f4f0-6f2a-5f1a-908b-139f9cdfea6f"
+version = "0.2.2+0"
 
 [[deps.libevdev_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
