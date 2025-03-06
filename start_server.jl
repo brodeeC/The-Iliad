@@ -1,5 +1,7 @@
 using Genie
 
+include("src/main.jl")
+
 # Configuration
 Genie.config.run_as_server = true
 
