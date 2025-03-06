@@ -11,11 +11,7 @@ include("config/routes.jl")
 # Start the server
 try
     @info "Starting Genie server..."
-    # Explicitly set both host and port
-    Genie.config.server_host = "0.0.0.0"
-    Genie.config.server_port = 8000
-
-    Genie.up()  # This should use the updated config
+    Genie.up(host="5.161.56.64", port=8000)  # This should use the updated config
 catch e
     @error "Error starting Genie server: $e"
     throw(e)
