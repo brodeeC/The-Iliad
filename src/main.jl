@@ -7,7 +7,7 @@ using HTTP
 # Route for serving static files like index.html
 route("/The-Iliad/", method = GET) do
     try
-        html_content = read(joinpath(@__DIR__, "public", "index.html"), String)
+        html_content = read(joinpath("public", "index.html"), String)
         return HTTP.Response(200, [("Content-Type", "text/html")], html_content)
     catch e
         return HTTP.Response(500, "Error rendering HTML view: $e")
