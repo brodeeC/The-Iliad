@@ -100,7 +100,7 @@
 
         <p>Use the boxes above to go to a specific book and line number. Click the button below to start reading.</p>
         <div style="text-align: left;">
-            <button onclick="window.location.href='/startReading'">Start Reading</button>
+            <button onclick="window.location.href='/The-Iliad/startReading'">Start Reading</button>
         </div>
     </div>
 
@@ -125,7 +125,7 @@
 
             if (page * 25 > line) {page = Math.ceil(line / 25)}
             
-            url = `/${book}/${page}`;
+            url = `/The-Iliad/serve/${book}/${page}`;
 
 
             // Attempt to fetch the page to check if it exists
