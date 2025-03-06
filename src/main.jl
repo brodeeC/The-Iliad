@@ -5,7 +5,7 @@ using Genie, Genie.Requests
 using HTTP
 
 # Route for serving static files like index.html
-route("/The-Iliad/", method = GET) do
+route("/The-Iliad", method = GET) do
     try
         html_content = read(joinpath("public", "index.html"), String)
         return HTTP.Response(200, [("Content-Type", "text/html")], html_content)
