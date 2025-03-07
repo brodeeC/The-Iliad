@@ -118,13 +118,11 @@
             // Divide by 25 to get a Float of page number
             // Use the Math.ceil() function to round the float to the next largest or equal
             // Integer, this ensures that all lines on a page can be found in the search
-            if (line % 25 == 0){line += 1}
-            //val = 0
-            //if (line % 25 == 0){val = 1}
-
-            page = Math.ceil(line / 25) //+ val; 
-
-            //if (page * 25 > line) {page = Math.ceil(line / 25)}
+            if (line % 25 === 0) {
+                page = line / 25;  
+            } else {
+                page = Math.ceil(line / 25);  
+            }
             
             url = `/The-Iliad/serve/${book}/${page}`;
 
