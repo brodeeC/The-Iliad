@@ -64,10 +64,6 @@ route("/The-Iliad/serve/:book/:page", method = GET) do
     pagenum = parse(Int, payload(:page))
     booknum = parse(Int, payload(:book))
 
-    if pagenum % 25 == 0
-        pagenum += 1
-    end
-
     # Correct path to the book's directory
     current_book_dir = joinpath(@__DIR__, "public", "Book$(booknum)")
     page_path = joinpath(current_book_dir, "page$(pagenum).html")

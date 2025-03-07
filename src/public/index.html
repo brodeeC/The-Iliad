@@ -118,6 +118,7 @@
             // Divide by 25 to get a Float of page number
             // Use the Math.ceil() function to round the float to the next largest or equal
             // Integer, this ensures that all lines on a page can be found in the search
+            if (line % 25 == 0){line += 1}
             val = 0
             if (line % 25 == 0){val = 1}
 
