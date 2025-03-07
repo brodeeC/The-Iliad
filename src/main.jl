@@ -43,9 +43,9 @@ route("/The-Iliad/search", method = POST) do
         lineNum = parse(Int64, query[2])
         pageNum = lineNum % 25
 
-        if lineNum % 25 == 0
-            pageNum -= 1
-        end
+        # if lineNum % 25 == 24
+        #     pageNum -= 1
+        # end
         
         current_book_dir = joinpath(@__DIR__, "public", "Book$(bookNum)")
         page_path = joinpath(current_book_dir, "page$(pageNum).html")
