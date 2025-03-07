@@ -301,7 +301,7 @@ function urlFormation(currBook ::Int64, currPage ::Int64, lastpage)
 			# Any page that isn't the first or last
 			else 
 				prev_url = "/The-Iliad/serve/$currBook/$prevPage"
-				next_url = "/The-Iliiad/serve/$currBook/$nextPage"
+				next_url = "/The-Iliad/serve/$currBook/$nextPage"
 			end
 			# Bottom of the page, creates buttons to navigate through pages
 			return """

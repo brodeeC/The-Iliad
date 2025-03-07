@@ -61,9 +61,16 @@ end
 # Route for serving Iliad book pages
 route("/The-Iliad/serve/:book/:page", method = GET) do
 
+    pagenum = parse(Int, payload(:page))
+    booknum = parse(Int, payload(:book))
+
+    if pagenum % 25 == 0
+        pagenum += 1
+    end
+
     # Correct path to the book's directory
-    current_book_dir = joinpath(@__DIR__, "public", "Book$(payload(:book))")
-    page_path = joinpath(current_book_dir, "page$(payload(:page)).html")
+    current_book_dir = joinpath(@__DIR__, "public", "Book$(booknum)")
+    page_path = joinpath(current_book_dir, "page$(pagenum).html")
     
     HTML_content = read(page_path, String)
     return HTTP.Response(200, [("Content-Type", "text/html")], HTML_content)
