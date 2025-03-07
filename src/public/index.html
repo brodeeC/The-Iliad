@@ -119,7 +119,7 @@
             // Use the Math.ceil() function to round the float to the next largest or equal
             // Integer, this ensures that all lines on a page can be found in the search
             if (line % 25 === 0) {
-                page = line / 25;  
+                page = line / 25 + 1;  
             } else {
                 page = Math.ceil(line / 25);  
             }
