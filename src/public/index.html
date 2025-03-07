@@ -124,8 +124,9 @@
             page = Math.ceil(line / 25) + val; 
 
             if (page * 25 > line) {page = Math.ceil(line / 25)}
+            console.log(page);
             
-            url = `/The-Iliad/serve/${book}/${line}`;
+            url = `/The-Iliad/serve/${book}/${page}`;
 
 
             // Attempt to fetch the page to check if it exists
