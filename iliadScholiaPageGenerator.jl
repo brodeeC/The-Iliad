@@ -320,6 +320,9 @@ function titleFormation(currwindow, currPage, currBook)
 			firstline = currwindow[1]
 		else
 			firstline = currwindow[2]
+			if (currBook >= 4)
+				firstline = currwindow[1]
+			end
 		end
 
 		# Last line of the page
@@ -449,7 +452,7 @@ end
 begin
 
 	#Iterate through all 24 books
-	for currBook in 1 : length(iliadBookURNs)
+	for currBook in 4 : length(iliadBookURNs)
 
 		#get all URN's of book `i`
 		book = getBook(currBook)
