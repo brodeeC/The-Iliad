@@ -327,7 +327,7 @@ function titleFormation(currwindow, currPage, currBook)
 
 		# Last line of the page
 		lastline = currwindow[end]
-
+		# TODO Put a check for a title here and that should solve the problem
 		# First line number of the page
 		firstnum = passageparts(firstline.urn)[2]
 
